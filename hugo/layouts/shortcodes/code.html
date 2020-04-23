@@ -1,0 +1,14 @@
+{{$file := .Get "file"}}
+{{ $options := "" }}
+{{- if (.Get "options") -}}
+{{ $options = (.Get "options")}}
+{{- else -}}
+{{- $options = "linenos=table" -}}
+{{- end -}}
+{{- if eq (.Get "markdown") "true" -}}
+{{- $file | readFile | markdownify -}}
+{{- else if (.Get "language") -}}
+{{- highlight ($file | readFile) (.Get "language") $options -}}
+{{- else -}}
+{{ $file | readFile | safeHTML }}
+{{- end -}}
