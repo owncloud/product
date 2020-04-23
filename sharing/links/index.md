@@ -1,65 +1,31 @@
 # Links
-## Use cases
+This document describes the features around 'Links' from the perspective of the owner. The perspective of a recipient is described in the section 'Resources'.
+
+## User stories
 
 1. Private Link
-2. Link that can grant access
-- As a user I want to quickly exchange data with externals as a one-off / temporary action
-- As a user I want to make data available online without authentication
+- As a user I want to be able to refer to shared resources by posting a static link (that never changes) on other media like email, chat rooms
+2. Link that can grant access (Public Link)
+- As a user (owner) I want to collaborate on any resource quickly & easily with anybody.
+- As a collaborator (share recipient) of a resource I want to collaborate on the resource quickly & easily with anybody.
+- As a user or a collaborator I want to protect any shared resource with a password to prevent leaks or abuse.
+- As a user I want to control the lifetime of links for that I do not provide infinite access (as I might forget about it and might leak data).
+- As a user I want to control what individual recipients are allowed to do with shared resources
 
 ## Requirements
 
 ### Adding a link on a resource
 
-
+Include: adding_a_link_on_a_resource.feature
 
 ### Managing links on a resource
 
-[source]
-----
-include::example$ocis/links/managing_links_on_a_resource.feature[]
-----
-
-### RESHARE / PERMISSION INCREASE SCENARIO
-- at any point in time you should be able to set permissions in the range of the original share permissions
+Include: managing_links_on_a_resource.feature
 
 ### Roles for links
 
-[source]
-----
-include::example$ocis/links/roles_for_links.feature[]
-----
-
-### Password protection for links
-
-[source]
-----
-include::example$ocis/links/password_protection_for_links.feature[]
-----
-
-### Sending links via mail
-
-[source]
-----
-include::example$ocis/links/sending_links_via_mail.feature[]
-----
+Include: roles_for_links.feature
 
 ### Expiration date for links
 
-[source]
-----
-include::example$ocis/links/expiration_date_for_links.feature[]
-----
-
-### Import links as federated shares
-
-[source]
-----
-include::example$ocis/links/import_links_as_federated_shares.feature[]
-----
-
-### Private link
-
-[source]
-----
-include::example$ocis/links/private_link.feature[]
-----
+Include: expiration_date_for_links.feature
