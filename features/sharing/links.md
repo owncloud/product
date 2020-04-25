@@ -22,16 +22,16 @@ This document describes the features around 'Links' from the perspective of the 
 
 ### Adding a link on a resource
 
-{{< code file="features/sharing/adding_a_link_on_a_resource.feature" language="gherkin" >}}
+{{< include file="features/sharing/adding_a_link_on_a_resource.feature" language="gherkin">}}
 
 ### Managing links on a resource
 
-{{< code file="features/sharing/managing_links_on_a_resource.feature" language="gherkin" >}}
+{{< include file="features/sharing/managing_links_on_a_resource.feature" language="gherkin">}}
 
 ### Roles for links
 
-{{< code file="features/sharing/roles_for_links.feature" language="gherkin" >}}
+{{< include file="features/sharing/roles_for_links.feature" language="gherkin" >}}
 
 ### Expiration date for links
 
-{{< code file="features/sharing/expiration_date_for_links.feature" language="gherkin" >}}
+{{< include file="features/sharing/expiration_date_for_links.feature" language="gherkin" >}}

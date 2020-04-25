@@ -11,4 +11,4 @@ geekdocFilePath: _index.md
 
 ### Accessing a resource via a link
 
-{{< code file="features/resources/accessing_a_resource_via_link.feature" language="gherkin" >}}
+{{< include file="features/resources/accessing_a_resource_via_link.feature" language="gherkin" >}}
