@@ -1,5 +1,5 @@
 ---
-baseURL: "https://owncloud.github.io/"
+baseURL: "https://owncloud.github.io/product"
 languageCode: "en-us"
 title: "ownCloud Product"
 theme: "hugo-geekdoc"
