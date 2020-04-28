@@ -85,5 +85,8 @@ def website(ctx):
           },
         },
       },
-    ]
+    ],
+    'depends_on': [
+      'testing',
+    ],
   }
