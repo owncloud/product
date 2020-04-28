@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Example on ownCloud Product</title>
+    <link>https://owncloud.github.io/example/</link>
+    <description>Recent content in Example on ownCloud Product</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://owncloud.github.io/example/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Example Feature</title>
+      <link>https://owncloud.github.io/example/example/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://owncloud.github.io/example/example/</guid>
+      <description>Headings  Level 3 - Shortcodes  Level 4   Example for an included .feature file Example for a mermaid diagram       This is only an example to show the usage of this Docs  Headings Headings are summarized in a table of contents if you include {{&amp;lt; toc &amp;gt;}} at the beginning of your file.
+You always need to start with Level 2, Level 1 is already used as the page title.</description>
+    </item>
+    
+  </channel>
+</rss>
