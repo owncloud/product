@@ -56,6 +56,14 @@ def website(ctx):
       'arch': 'amd64',
     },
     'steps': [
+        {
+        'name': 'build',
+        'image': 'klakegg/hugo:0.69.0-ext-alpine',
+        'pull': 'always',
+        'commands': [
+          'hugo-official',
+        ],
+      },
       {
         'name': 'publish',
         'image': 'plugins/gh-pages:1',
