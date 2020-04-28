@@ -1,5 +1,5 @@
 {{$file := .Get "file"}}
-{{ $options := "" }}
+{{ $options := "linenos=false" }}
 {{- if (.Get "options") -}}
 {{ $options = (.Get "options")}}
 {{- else -}}

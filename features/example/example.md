@@ -33,7 +33,7 @@ This Hugo Theme uses the goldmark renderer.
 {{</* code file="features/example/example.feature" language="gherkin" */>}}
 
 **Rendered Result**  
-{{< code file="features/example/example.feature" language="gherkin" >}}
+{{< include file="features/example/example.feature" language="gherkin" >}}
 
 ### Example for a mermaid diagram
 
