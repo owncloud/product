@@ -30,7 +30,7 @@ This Hugo Theme uses the goldmark renderer.
 ### Example for an included .feature file
 
 **Used Shortcode**  
-{{</* code file="features/example/example.feature" language="gherkin" */>}}
+{{</* include file="features/example/example.feature" language="gherkin" */>}}
 
 **Rendered Result**  
 {{< include file="features/example/example.feature" language="gherkin" >}}
