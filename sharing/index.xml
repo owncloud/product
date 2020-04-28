@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sharing on ownCloud Product</title>
-    <link>https://owncloud.github.io/sharing/</link>
+    <link>https://owncloud.github.io/product/sharing/</link>
     <description>Recent content in Sharing on ownCloud Product</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://owncloud.github.io/sharing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://owncloud.github.io/product/sharing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Links</title>
-      <link>https://owncloud.github.io/sharing/links/</link>
+      <link>https://owncloud.github.io/product/sharing/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://owncloud.github.io/sharing/links/</guid>
+      <guid>https://owncloud.github.io/product/sharing/links/</guid>
       <description>This document describes the features around &amp;lsquo;Links&amp;rsquo; from the perspective of the owner. The perspective of a recipient is described in the section &amp;lsquo;Resources&amp;rsquo;.
 User stories  Private Link  As a user I want to be able to refer to shared resources by posting a static link (that never changes) on other media like email, chat rooms   Link that can grant access (Public Link)  As a user (owner) I want to collaborate on any resource quickly &amp;amp; easily with anybody.</description>
     </item>

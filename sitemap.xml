@@ -3,38 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://owncloud.github.io/example/example/</loc>
+    <loc>https://owncloud.github.io/product/example/example/</loc>
     <lastmod>2018-05-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://owncloud.github.io/example/</loc>
+    <loc>https://owncloud.github.io/product/example/</loc>
     <lastmod>2018-05-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://owncloud.github.io/</loc>
+    <loc>https://owncloud.github.io/product/</loc>
     <lastmod>2018-05-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://owncloud.github.io/categories/</loc>
+    <loc>https://owncloud.github.io/product/categories/</loc>
   </url>
   
   <url>
-    <loc>https://owncloud.github.io/sharing/links/</loc>
+    <loc>https://owncloud.github.io/product/sharing/links/</loc>
   </url>
   
   <url>
-    <loc>https://owncloud.github.io/resources/</loc>
+    <loc>https://owncloud.github.io/product/resources/</loc>
   </url>
   
   <url>
-    <loc>https://owncloud.github.io/sharing/</loc>
+    <loc>https://owncloud.github.io/product/sharing/</loc>
   </url>
   
   <url>
-    <loc>https://owncloud.github.io/tags/</loc>
+    <loc>https://owncloud.github.io/product/tags/</loc>
   </url>
   
 </urlset>
