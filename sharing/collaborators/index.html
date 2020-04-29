@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sharing">
+<meta name="description" content="Collaborators">
 
-<title>Sharing | ownCloud Product</title>
+<title>Collaborators | ownCloud Product</title>
 <link rel="icon" href="/product/favicon/favicon-32x32.png" type="image/x-icon">
 
 <link rel="stylesheet" href="/product/main.min.css">
@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="/product/custom.css">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://owncloud.github.io/product/sharing/index.xml" title="ownCloud Product" />
 <!--
     Made with Geekdoc theme
     https://github.com/xoxys/hugo-geekdoc
@@ -128,7 +127,7 @@
             <li>
             
                 <span class="flex">
-                    <a href="/product/sharing/" class="gdoc-nav__entry is-active">
+                    <a href="/product/sharing/" class="gdoc-nav__entry ">
                         Sharing
                     </a>
                 </span>
@@ -146,7 +145,7 @@
             <li>
             
                 <span class="flex">
-                    <a href="/product/sharing/collaborators/" class="gdoc-nav__entry ">
+                    <a href="/product/sharing/collaborators/" class="gdoc-nav__entry is-active">
                         Collaborators
                     </a>
                 </span>
@@ -222,7 +221,14 @@
         
     
     
-        <a href='/product/'>ownCloud Product Documentation</a> / Sharing
+        
+        
+        
+    
+    
+        <a href='/product/'>ownCloud Product Documentation</a> / <a href='/product/sharing/'>Sharing</a> / Collaborators
+    
+
     
 
     
@@ -233,15 +239,16 @@
     <span>
         
             <svg class="icon code"><use xlink:href="#code"></use></svg>
-            <a href="https://github.com/owncloud/product/edit/master/docs/sharing.md">
+            <a href="https://github.com/owncloud/product/edit/master/docs/collaborators.md">
                 Edit this page
             </a>
         
     </span>
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Sharing</h1>
+        <h1>Collaborators</h1>
         
 
 
@@ -250,7 +257,262 @@
     
 
 
-<p>Sharing.</p>
+<p>This document describes the features around &lsquo;Collaborators&rsquo; from the perspective of the owner. The perspective of a recipient is described in the section &lsquo;Resources&rsquo;.</p>
+<div class="gdoc-page__anchorwrap"><h2 id="user-stories"><a data-clipboard-text="https://owncloud.github.io/product/sharing/collaborators/#user-stories" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#user-stories"><svg class="icon link"><use xlink:href="#link"></use></svg></a>User stories</h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="requirements"><a data-clipboard-text="https://owncloud.github.io/product/sharing/collaborators/#requirements" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#requirements"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Requirements</h2></div>
+<div class="gdoc-page__anchorwrap"><h3 id="adding-collaborators-to-a-resource"><a data-clipboard-text="https://owncloud.github.io/product/sharing/collaborators/#adding-collaborators-to-a-resource" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#adding-collaborators-to-a-resource"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Adding collaborators to a resource</h3></div>
+<ul>
+<li>As an owner or co-owner of a resource I want to be able to add other collaborators to the resource in order to provide access and to enable collaboration on the resource.</li>
+</ul>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Feature: Adding collaborators to a resource
+
+Scenario: Finding collaborators
+  GIVEN I&#39;m a logged in user located in the collaborators panel of a resource
+   WHEN I start typing in the collaborator search field
+   THEN I see suggestions (with potentially many characters) based on the available user and group identifiers/attributes, sharing restrictions and options for autocomplete results. These are structured in the following way:
+        - [Avatar] Identifier / name / mail address / federation ID
+        - Additional information if applicable (e.g. &#39;Scenario: Extra field to display in autocomplete results&#39;)
+        - Type (User/Group/Guest/Federated)
+    AND the suggestions for guests or federated users only appear once I enter a compliant identifier (e.g., &#34;name@sub.domain.tld&#34;)
+   THEN I choose a collaborator
+    AND the chosen collaborator&#39;s becomes fixed but can easily be removed again
+    AND I can start typing again to add additional collaborators
+
+Scenario: Setting collaborator properties
+  GIVEN I&#39;m adding collaborators as in &#39;Scenario: Finding collaborators&#39;
+   WHEN having added the first collaborator
+   THEN I can choose a role for the chosen collaborators as in &#39;Feature: Roles for collaborators&#39;
+   THEN I can set an expiration date for the chosen collaborators as in &#39;Feature: Expiration date for collaborators&#39;
+
+Scenario: Confirming collaborators
+  GIVEN I have set collaborator properties as in &#39;Scenario: Setting collaborator properties&#39;
+   WHEN I confirm the supplied information
+   THEN the collaborators are added to the resource according to the specified properties
+    AND I get visual feedback to know whether the action was successful or not
+</code></pre></td></tr></table>
+</div>
+</div>
+<div class="gdoc-page__anchorwrap"><h3 id="managing-collaborators-of-a-resource"><a data-clipboard-text="https://owncloud.github.io/product/sharing/collaborators/#managing-collaborators-of-a-resource" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#managing-collaborators-of-a-resource"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Managing collaborators of a resource</h3></div>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Feature: Managing collaborators of a resource
+
+Scenario: Viewing collaborators of a resource
+  GIVEN I&#39;m a collaborator of a specific resource
+    AND I have the role &#39;Owner&#39;
+#     OR I have the role &#39;Co-Owner&#39;
+   WHEN looking at the resource in detail
+   THEN I get a list of all collaborators of the resource separated by users and groups that whereby each entry contains the following information
+    - Name and additional information based on &#39;Scenario: Extra field to display in autocomplete results&#39;
+    - Avatar
+    - Type (User/Guest/Federated)
+    - Role
+    - State (pending/accepted; for local/federated/guest)
+    - Expiration date (if applicable)
+    - Initiator of a reshare (if applicable)
+
+Scenario: Removing a collaborator from a resource
+  GIVEN I&#39;m a collaborator of a specific resource
+    AND I have the role &#39;Owner&#39;
+#     OR I have the role &#39;Co-Owner&#39;
+   WHEN looking at the resource in detail
+   THEN I can remove collaborators from the resource
+    AND I have to confirm the removal
+    AND the collaborator disappears from the list
+    AND the removed users do not have access anymore
+
+Scenario: Modifying a collaborator of a resource
+  GIVEN I&#39;m a collaborator of a specific resource
+    AND I have the role &#39;Owner&#39;
+#     OR I have the role &#39;Co-Owner&#39;
+   WHEN looking at the resource in detail
+   THEN I can change each collaborator&#39;s role as in &#39;Feature: Roles for collaborators&#39;
+    AND I can change each collaborator&#39;s expiration date as in &#39;Feature: Expiration date for collaborators&#39;
+    AND I have to confirm the modifications
+    AND the modifications take effect
+</code></pre></td></tr></table>
+</div>
+</div>
+<div class="gdoc-page__anchorwrap"><h3 id="roles-for-collaborators"><a data-clipboard-text="https://owncloud.github.io/product/sharing/collaborators/#roles-for-collaborators" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#roles-for-collaborators"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Roles for collaborators</h3></div>
+<ul>
+<li>As a regular user adding collaborators to a resource I want to choose roles for collaborators as these are easy to understand and less technical than raw permissions. Still, I need a brief explanation of what the roles exactly stand for in order to prevent mistakes. For legacy reasons and as a power user I still need granular permissions to restrict collaborators to exactly the features I want to allow.</li>
+</ul>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Feature: Roles for collaborators
+
+- Owner: The physical owner of the resource
+#- Co-Owner: Full permissions including managing existing and adding additional collaborators
+- Editor: View + Edit permissions
+- Viewer: View only
+#- Dynamic roles (e.g. Secure Viewer)
+- Advanced permissions
+  - Cover legacy permission combinations
+  - Offer granular permission sets
+
+Scenario: Setting roles for collaborators on a single file
+  GIVEN I&#39;m a collaborator of a specific file
+    AND I have the role &#39;Owner&#39;
+#     OR I have the role &#39;Co-Owner&#39;
+   WHEN located in &#39;Scenario: Setting collaborator properties&#39;
+#   THEN I can choose the role &#39;Co-Owner&#39;
+#    AND I see an explanatory note &#34;Manage collaborators, view, download and edit&#34;
+   THEN I can choose the role &#39;Editor&#39;
+    AND I see an explanatory note &#34;View, download and edit&#34;
+   THEN I can choose the role &#39;Viewer&#39;
+    AND I see an explanatory note &#34;View and download&#34;
+#   THEN I can choose dynamic roles like &#39;Secure Viewer&#39; which are introduced by apps
+#    AND I see an explanatory note defined by the respective app
+#   WHEN choosing a dynamic role
+#   THEN I can set single sub-permissions like &#39;Print / Export PDF&#39; defined by the respective app
+   THEN I can choose the role &#39;Advanced permissions&#39;
+    AND I see an explanatory note &#34;Set detailed permissions&#34;
+   WHEN choosing the role &#39;Advanced permissions&#39;
+   THEN I can set single permissions &#34;Manage&#34; and &#34;Edit&#34;
+
+Scenario: Setting roles for collaborators on a folder
+  GIVEN I&#39;m a collaborator of a specific folder
+    AND I have the role &#39;Owner&#39;
+#     OR I have the role &#39;Co-Owner&#39;
+   WHEN located in &#39;Scenario: Setting collaborator properties&#39;
+#   THEN I can choose the role &#39;Co-Owner&#39;
+#    AND I see an explanatory note &#34;Manage collaborators, view, download, edit and delete&#34;
+   THEN I can choose the role &#39;Editor&#39;
+    AND I see an explanatory note &#34;View, download, edit and delete&#34;
+   THEN I can choose the role &#39;Viewer&#39;
+    AND I see an explanatory note &#34;View and download&#34;
+#   THEN I can choose dynamic roles like &#39;Secure Viewer&#39; which are introduced by apps
+#    AND I see an explanatory note defined by the respective app
+#   WHEN choosing a dynamic role
+#   THEN I can set single sub-permissions like &#39;Print / Export PDF&#39; defined by the respective app
+   THEN I can choose the role &#39;Advanced permissions&#39;
+    AND I see an explanatory note &#34;Set detailed permissions&#34;
+   WHEN choosing the role &#39;Advanced permissions&#39;
+   THEN I can set single permissions &#34;Manage&#34;, &#34;Create&#34;, &#34;Change&#34;, &#34;Delete&#34;
+</code></pre></td></tr></table>
+</div>
+</div>
 
 
     </article>
