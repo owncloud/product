@@ -11,16 +11,6 @@
     
     
     <item>
-      <title>Collaborators</title>
-      <link>https://owncloud.github.io/product/sharing/collaborators/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://owncloud.github.io/product/sharing/collaborators/</guid>
-      <description>This document describes the features around &amp;lsquo;Collaborators&amp;rsquo; from the perspective of the owner. The perspective of a recipient is described in the section &amp;lsquo;Resources&amp;rsquo;.
-User stories Requirements Adding collaborators to a resource  As an owner or co-owner of a resource I want to be able to add other collaborators to the resource in order to provide access and to enable collaboration on the resource.  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25  Feature: Adding collaborators to a resource Scenario: Finding collaborators GIVEN I&amp;#39;m a logged in user located in the collaborators panel of a resource WHEN I start typing in the collaborator search field THEN I see suggestions (with potentially many characters) based on the available user and group identifiers/attributes, sharing restrictions and options for autocomplete results.</description>
-    </item>
-    
-    <item>
       <title>Links</title>
       <link>https://owncloud.github.io/product/sharing/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
