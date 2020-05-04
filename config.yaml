@@ -18,9 +18,6 @@ publishDir: public
 
 # Needed for mermaid/katex shortcodes
 markup:
-  goldmark:
-    renderer:
-      unsafe: true
   tableOfContents:
     startLevel: 1
     endLevel: 9
