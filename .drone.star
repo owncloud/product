@@ -58,10 +58,10 @@ def website(ctx):
     'steps': [
         {
         'name': 'build',
-        'image': 'klakegg/hugo:0.69.0-ext-alpine',
+        'image': 'owncloudci/hugo:0.69.2',
         'pull': 'always',
         'commands': [
-          'hugo-official',
+          'hugo',
         ],
       },
       {
