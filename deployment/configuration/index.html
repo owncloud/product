@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sharing">
+<meta name="description" content="Configuration">
 
-<title>Sharing | ownCloud Product</title>
+<title>Configuration | ownCloud Product</title>
 <link rel="icon" href="/product/favicon/favicon-32x32.png" type="image/x-icon">
 
 <link rel="stylesheet" href="/product/main.min.css">
@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="/product/custom.css">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://owncloud.github.io/product/sharing/index.xml" title="ownCloud Product" />
 <!--
     Made with Geekdoc theme
     https://github.com/xoxys/hugo-geekdoc
@@ -138,7 +137,7 @@
             <li>
             
                 <span class="flex">
-                    <a href="/product/deployment/configuration/" class="gdoc-nav__entry ">
+                    <a href="/product/deployment/configuration/" class="gdoc-nav__entry is-active">
                         Configuration
                     </a>
                 </span>
@@ -249,7 +248,7 @@
             <li>
             
                 <span class="flex">
-                    <a href="/product/sharing/" class="gdoc-nav__entry is-active">
+                    <a href="/product/sharing/" class="gdoc-nav__entry ">
                         Sharing
                     </a>
                 </span>
@@ -328,7 +327,14 @@
         
     
     
-        <a href='/product/'>ownCloud Product Documentation</a> / Sharing
+        
+        
+        
+    
+    
+        <a href='/product/'>ownCloud Product Documentation</a> / <a href='/product/deployment/'>Deployment</a> / Configuration
+    
+
     
 
     
@@ -339,15 +345,16 @@
     <span>
         
             <svg class="icon code"><use xlink:href="#code"></use></svg>
-            <a href="https://github.com/owncloud/product/edit/master/docs/sharing.md">
+            <a href="https://github.com/owncloud/product/edit/master/docs/configuration.md">
                 Edit this page
             </a>
         
     </span>
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Sharing</h1>
+        <h1>Configuration</h1>
         
 
 
@@ -356,7 +363,34 @@
     
 
 
-<p>Sharing.</p>
+<ul>
+<li>Configuration mechanisms / configuration for distributed setups</li>
+<li>Default configuration</li>
+<li>Select services (ocis)</li>
+<li>Configure services</li>
+<li>Branding</li>
+<li>Certificates</li>
+</ul>
+<p>#- PR Mail Server</p>
+<ul>
+<li>Optional Infrastructure
+<ul>
+<li>Redis (redis.md)</li>
+<li>Service Discovery (service_discovery.md)</li>
+<li>IDP (identities.md)</li>
+<li>LDAP/AD (ldap.md)</li>
+<li>Storages (storages.md)
+<ul>
+<li>S3</li>
+<li>NFS</li>
+<li>EOS</li>
+<li>GPFS</li>
+<li>Scality S3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
     </article>
