@@ -3,30 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://owncloud.github.io/product/deployment/general/</loc>
-  </url>
-  
-  <url>
-    <loc>https://owncloud.github.io/product/deployment/getting_started/</loc>
-  </url>
-  
-  <url>
-    <loc>https://owncloud.github.io/product/deployment/advanced_deployment/</loc>
-  </url>
-  
-  <url>
-    <loc>https://owncloud.github.io/product/deployment/configuration/</loc>
-  </url>
-  
-  <url>
-    <loc>https://owncloud.github.io/product/deployment/maintenance/</loc>
-  </url>
-  
-  <url>
-    <loc>https://owncloud.github.io/product/deployment/status/</loc>
-  </url>
-  
-  <url>
     <loc>https://owncloud.github.io/product/example/example/</loc>
     <lastmod>2018-05-02T00:00:00+00:00</lastmod>
   </url>
@@ -46,7 +22,7 @@
   </url>
   
   <url>
-    <loc>https://owncloud.github.io/product/deployment/</loc>
+    <loc>https://owncloud.github.io/product/sharing/collaborators/</loc>
   </url>
   
   <url>

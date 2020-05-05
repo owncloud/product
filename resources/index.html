@@ -72,127 +72,6 @@
             
             <li>
             
-                <span class="flex">Deployment</span>
-            
-
-            
-            
-                
-    
-
-    <ul class="gdoc-nav__list">
-        
-            
-            
-            <li>
-            
-                <span class="flex">
-                    <a href="/product/deployment/general/" class="gdoc-nav__entry ">
-                        General
-                    </a>
-                </span>
-            
-
-            
-            
-            </li>
-            
-            
-        
-            
-            
-            <li>
-            
-                <span class="flex">
-                    <a href="/product/deployment/getting_started/" class="gdoc-nav__entry ">
-                        Getting started
-                    </a>
-                </span>
-            
-
-            
-            
-            </li>
-            
-            
-        
-            
-            
-            <li>
-            
-                <span class="flex">
-                    <a href="/product/deployment/advanced_deployment/" class="gdoc-nav__entry ">
-                        Advanced deployment
-                    </a>
-                </span>
-            
-
-            
-            
-            </li>
-            
-            
-        
-            
-            
-            <li>
-            
-                <span class="flex">
-                    <a href="/product/deployment/configuration/" class="gdoc-nav__entry ">
-                        Configuration
-                    </a>
-                </span>
-            
-
-            
-            
-            </li>
-            
-            
-        
-            
-            
-            <li>
-            
-                <span class="flex">
-                    <a href="/product/deployment/maintenance/" class="gdoc-nav__entry ">
-                        Maintenance
-                    </a>
-                </span>
-            
-
-            
-            
-            </li>
-            
-            
-        
-            
-            
-            <li>
-            
-                <span class="flex">
-                    <a href="/product/deployment/status/" class="gdoc-nav__entry ">
-                        System status
-                    </a>
-                </span>
-            
-
-            
-            
-            </li>
-            
-            
-        
-    </ul>
-
-            
-            </li>
-            
-            
-            
-            <li>
-            
                 <span class="flex">
                     <a href="/product/example/" class="gdoc-nav__entry ">
                         Example
@@ -262,6 +141,21 @@
 
     <ul class="gdoc-nav__list">
         
+            
+            
+            <li>
+            
+                <span class="flex">
+                    <a href="/product/sharing/collaborators/" class="gdoc-nav__entry ">
+                        Collaborators
+                    </a>
+                </span>
+            
+
+            
+            
+            </li>
+            
             
             
             <li>
@@ -358,7 +252,157 @@
 
 <div class="gdoc-page__anchorwrap"><h2 id="user-stories"><a data-clipboard-text="https://owncloud.github.io/product/resources/#user-stories" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#user-stories"><svg class="icon link"><use xlink:href="#link"></use></svg></a>User stories</h2></div>
 <div class="gdoc-page__anchorwrap"><h2 id="requirements"><a data-clipboard-text="https://owncloud.github.io/product/resources/#requirements" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#requirements"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Requirements</h2></div>
+<div class="gdoc-page__anchorwrap"><h3 id="accessing-a-resource-as-a-collaborator"><a data-clipboard-text="https://owncloud.github.io/product/resources/#accessing-a-resource-as-a-collaborator" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#accessing-a-resource-as-a-collaborator"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Accessing a resource as a collaborator</h3></div>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Feature: Accessing a resource as a collaborator
+
+Scenario: Accessing a resource as a collaborator with the &#39;Viewer&#39; role
+  GIVEN I&#39;m a logged in user who is a collaborator of a resource
+    AND I have the role &#39;Viewer&#39;
+#    AND I have added the resource to my personal space as in &#39;Feature: Overview of received shared resources&#39; / &#39;Feature: Pending Shares&#39;
+   WHEN accessing this resource
+   THEN I can list the resource and its contents
+    AND I can download the resource and its contents
+    AND I can view the resource and its contents as in &#39;Feature: Accessing a resource&#39;
+    AND I can rename the resource as in &#39;Scenario: Renaming a shared resource in a users&#39; personal space&#39;
+    AND I can move the resource as in &#39;Scenario: Moving a shared resource within a users&#39; personal space&#39;
+    AND I can remove the resource from my personal space as in &#39;Feature: Removing a shared resource from a users&#39; personal space&#39;
+
+Scenario: Accessing a resource as a collaborator with the &#39;Editor&#39; role
+  GIVEN I&#39;m a logged in user who is a collaborator of a resource
+    AND I have the role &#39;Editor&#39;
+#    AND I have added the resource to my personal space as in &#39;Feature: Overview of received shared resources&#39; / &#39;Feature: Pending Shares&#39;
+   WHEN accessing this resource
+   THEN I can list the resource and its contents
+    AND I can download the resource and its contents
+    AND I can view the resource and its contents as in &#39;Feature: Accessing a resource&#39;
+    AND I can rename the resource as in &#39;Scenario: Renaming a shared resource in a users&#39; personal space&#39;
+    AND I can move the resource as in &#39;Scenario: Moving a shared resource within a users&#39; personal space&#39;
+    AND I can remove the resource from my personal space as in &#39;Feature: Removing a shared resource from a users&#39; personal space&#39;
+    AND I can rename the contents of the resource as in &#39;Feature: Renaming a resource&#39;
+    AND I can delete the contents of the resource as in &#39;Feature: Deleting a resource&#39;
+    AND I can move the contents of the resource as in &#39;Feature: Moving a resource&#39;
+    AND I can move resources into the resource as in &#39;Feature: Moving a resource&#39;
+    AND I can move resources out of the resource as in &#39;Feature: Moving a resource&#39;
+    AND I can create resources within the resource as in &#39;Feature: Creating a resource&#39;
+    AND I can upload resources into the resource as in &#39;Feature: Uploading a resource&#39;
+    AND I can edit/change/update the resource and its contents
+
+Scenario: Accessing a resource as a collaborator with the &#39;Advanced permissions&#39; role
+  GIVEN I&#39;m a logged in user who is a collaborator of a resource
+    AND I have the role &#39;Advanced permissions&#39;
+#    AND I have added the resource to my personal space as in &#39;Feature: Overview of received shared resources&#39; / &#39;Feature: Pending Shares&#39;
+   WHEN accessing this resource
+   THEN I can list the resource and its contents
+    AND I can download the resource and its contents
+    AND I can view the resource and its contents as in &#39;Feature: Accessing a resource&#39;
+    AND I can rename the resource as in &#39;Scenario: Renaming a shared resource in a users&#39; personal space&#39;
+    AND I can move the resource as in &#39;Scenario: Moving a shared resource within a users&#39; personal space&#39;
+    AND I can remove the resource from my personal space as in &#39;Feature: Removing a shared resource from a users&#39; personal space&#39;
+    AND I can use the resource based on the additionally granted detailed permissions described below
+    AND the granted detailed permissions can stack/complement each other
+
+   WHEN accessing this resources without any of the detailed permissions
+   THEN the behavior equals &#39;Scenario: Accessing a resource as a collaborator with the &#39;Viewer&#39; role&#39;
+
+   WHEN accessing this resource only with the permission &#34;Edit&#34; (single file)
+   THEN I can edit/change/update the resource
+
+   WHEN accessing this resource only with the permission &#34;Create&#34; (folder)
+   THEN I can move resources into the resource as in &#39;Feature: Moving a resource&#39;
+    AND I can create resources within the resource as in &#39;Feature: Creating a resource&#39;
+    AND I can upload resources into the resource as in &#39;Feature: Uploading a resource&#39;
+
+   WHEN accessing this resource only with the permission &#34;Change&#34; (folder)
+   THEN I can rename the contents of the resource as in &#39;Feature: Renaming a resource&#39;
+    AND I can edit/change/update the resource and its contents
+
+   WHEN accessing this resource only with the permission &#34;Delete&#34; (folder)
+   THEN I can delete the contents of the resource as in &#39;Feature: Deleting a resource&#39;
+    AND I can move resources out of the resource as in &#39;Feature: Moving a resource&#39;
+
+   WHEN accessing this resource only with the permission &#34;Manage&#34;
+   THEN I can add collaborators to the resource as in &#39;Feature: Adding collaborators to a resource&#39;
+    AND I can manage the collaborators of the resource as in &#39;Feature: Managing collaborators of a resource&#39;
+</code></pre></td></tr></table>
+</div>
+</div>
 <div class="gdoc-page__anchorwrap"><h3 id="accessing-a-resource-via-a-link"><a data-clipboard-text="https://owncloud.github.io/product/resources/#accessing-a-resource-via-a-link" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#accessing-a-resource-via-a-link"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Accessing a resource via a link</h3></div>
+
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
