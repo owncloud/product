@@ -11,16 +11,6 @@
     
     
     <item>
-      <title>Collaborators</title>
-      <link>https://owncloud.github.io/product/sharing/collaborators/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://owncloud.github.io/product/sharing/collaborators/</guid>
-      <description>This document describes the features around &amp;lsquo;Collaborators&amp;rsquo; from the perspective of the owner. The perspective of a recipient is described in the section &amp;lsquo;Resources&amp;rsquo;.
-User stories  Adding single collaborators to a resource (user share)   Use case: As a user I want to exchange data with internal single users for that they get access and can collaborate with me  Requirements Adding collaborators to a resource  As an owner or co-owner of a resource I want to be able to add other collaborators to the resource in order to provide access and to enable collaboration on the resource.</description>
-    </item>
-    
-    <item>
       <title>Links</title>
       <link>https://owncloud.github.io/product/sharing/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
