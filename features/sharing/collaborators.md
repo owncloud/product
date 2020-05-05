@@ -9,6 +9,9 @@ This document describes the features around 'Collaborators' from the perspective
 
 ## User stories
 
+1. Adding single collaborators to a resource (user share)
+* Use case: As a user I want to exchange data with internal single users for that they get access and can collaborate with me
+
 ## Requirements
 
 ### Adding collaborators to a resource
