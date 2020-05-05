@@ -81,11 +81,6 @@ a:visited,
   color: #4e85c8;
 }
 
-.chroma .lntable td:first-child {
-  padding-right: .5em;
-  background-color: rgba(86,96,105,.1);
-
-}
 /* custom shortcodes */
 /* button */
 .gdoc-button { color: #495057; }

@@ -23,10 +23,10 @@ def testing(ctx):
     'steps': [
       {
         'name': 'build',
-        'image': 'klakegg/hugo:0.69.0-ext-alpine',
+        'image': 'owncloudci/hugo:0.69.2',
         'pull': 'always',
         'commands': [
-          'hugo-official',
+          'hugo',
         ],
       },
       {
@@ -77,16 +77,14 @@ def website(ctx):
           },
           'pages_directory': 'public/',
         },
-        'when': {
-          'ref': {
-            'exclude': [
-              'refs/pull/**',
-            ],
-          },
-        },
       },
     ],
     'depends_on': [
       'testing',
     ],
+    'trigger': {
+      'ref': [
+        'refs/heads/master',
+      ],
+    },
   }

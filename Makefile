@@ -3,7 +3,7 @@ NAME := product
 PUBLIC := public
 RESOURCES := resources
 THEME_DIR := hugo/themes/hugo-geekdoc
-THEME_VERSION ?= v0.2.1
+THEME_VERSION ?= v0.2.2
 
 .PHONY: all
 all: docs-build
