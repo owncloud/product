@@ -8,7 +8,7 @@ Scenario: Getting information about resources at a glance
   - Favorite
   - File type icons / thumbnails
   - Name
-  - Size
+  - Size (display decimals only for MB and higher)
   - Updated (modification time)
   - Has collaborators (invited by myself)
   - Has collaborators (I'm invited)
