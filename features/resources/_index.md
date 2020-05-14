@@ -27,11 +27,11 @@ geekdocFilePath: _index.md
 ### Overview of received shared resources
 
 - As a user I only want to view the resources that I'm a collaborator of to separate other users' files from mine as well as to add or remove them to/from my personal space.
-- As a user I want to get a list of collaborator invitations that I didn't yet decide upon ("Pending Shares") to be able to add a pending shared space to my personal space after dismissing the invitation notification or to re-add a resource I previously removed from my personal space as in 'Feature: Removing a shared resource from a users' personal space'.
+- As a user I want to get a list of collaborator invitations that I didn't yet decide upon ("Pending Shares") to be able to add a resource to my personal space after dismissing the invitation notification or to re-add a resource I previously removed from my personal space.
 - As a user it helps me to list shares with state "Pending" first by default as these are usually the most actionable ones.
+- As a user I want to remove a shared resource from my personal space if I do no longer need it or accidentally accepted it in order to move it out of sight and to keep my account clean. The resource should stay shared with me but in a declined state. I don't want to inform the owner of the resource about it because I can restore access to the resource at any time by adding it again.
 
 {{< include file="features/resources/overview_of_received_shared_resources.feature" language="gherkin" >}}
-
 
 ### Accessing a resource via a link
 
