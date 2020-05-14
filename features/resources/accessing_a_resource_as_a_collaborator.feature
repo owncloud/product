@@ -8,9 +8,9 @@ Scenario: Accessing a resource as a collaborator with the 'Viewer' role
    THEN I can list the resource and its contents
     AND I can download the resource and its contents
     AND I can view the resource and its contents as in 'Feature: Accessing a resource'
-    AND I can rename the resource as in 'Scenario: Renaming a shared resource in a users' personal space'
-    AND I can move the resource as in 'Scenario: Moving a shared resource within a users' personal space'
-    AND I can remove the resource from my personal space as in 'Feature: Removing a shared resource from a users' personal space'
+    AND I can rename the resource as in 'Scenario: Renaming a shared resource in a user's personal space'
+    AND I can move the resource as in 'Scenario: Moving a shared resource within a user's personal space'
+    AND I can remove the resource from my personal space as in 'Feature: Removing a shared resource from a user's personal space'
 
 Scenario: Accessing a resource as a collaborator with the 'Editor' role
   GIVEN I'm a logged in user who is a collaborator of a resource
@@ -20,9 +20,9 @@ Scenario: Accessing a resource as a collaborator with the 'Editor' role
    THEN I can list the resource and its contents
     AND I can download the resource and its contents
     AND I can view the resource and its contents as in 'Feature: Accessing a resource'
-    AND I can rename the resource as in 'Scenario: Renaming a shared resource in a users' personal space'
-    AND I can move the resource as in 'Scenario: Moving a shared resource within a users' personal space'
-    AND I can remove the resource from my personal space as in 'Feature: Removing a shared resource from a users' personal space'
+    AND I can rename the resource as in 'Scenario: Renaming a shared resource in a user's personal space'
+    AND I can move the resource as in 'Scenario: Moving a shared resource within a user's personal space'
+    AND I can remove the resource from my personal space as in 'Feature: Removing a shared resource from a user's personal space'
     AND I can rename the contents of the resource as in 'Feature: Renaming a resource'
     AND I can delete the contents of the resource as in 'Feature: Deleting a resource'
     AND I can move the contents of the resource as in 'Feature: Moving a resource'
@@ -40,9 +40,9 @@ Scenario: Accessing a resource as a collaborator with the 'Advanced permissions'
    THEN I can list the resource and its contents
     AND I can download the resource and its contents
     AND I can view the resource and its contents as in 'Feature: Accessing a resource'
-    AND I can rename the resource as in 'Scenario: Renaming a shared resource in a users' personal space'
-    AND I can move the resource as in 'Scenario: Moving a shared resource within a users' personal space'
-    AND I can remove the resource from my personal space as in 'Feature: Removing a shared resource from a users' personal space'
+    AND I can rename the resource as in 'Scenario: Renaming a shared resource in a user's personal space'
+    AND I can move the resource as in 'Scenario: Moving a shared resource within a user's personal space'
+    AND I can remove the resource from my personal space as in 'Feature: Removing a shared resource from a user's personal space'
     AND I can use the resource based on the additionally granted detailed permissions described below
     AND the granted detailed permissions can stack/complement each other
 
