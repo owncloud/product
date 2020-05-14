@@ -6,12 +6,13 @@ Scenario: Viewing collaborators of a resource
 #     OR I have the role 'Co-Owner'
    WHEN looking at the resource in detail
    THEN I get a list of all collaborators of the resource separated by users and groups that whereby each entry contains the following information
-    - Name and additional information based on 'Scenario: Extra field to display in autocomplete results'
+    - Name
+#    - Additional information based on 'Scenario: Extra field to display in autocomplete results'
     - Avatar
-    - Type (User/Guest/Federated)
+#    - Type (User/Guest/Federated)
     - Role
-    - State (pending/accepted; for local/federated/guest)
-    - Expiration date (if applicable)
+#    - State (pending/accepted; for local/federated/guest)
+#    - Expiration date (if applicable)
     - Initiator of a reshare (if applicable)
 
 Scenario: Removing a collaborator from a resource
