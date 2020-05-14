@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Feature: Resource listing
-=======
 Feature: Listing resources
->>>>>>> Initial feature commit
 
 Scenario: Browsing the list of resources
   TODO:
