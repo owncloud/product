@@ -9,7 +9,11 @@ geekdocFilePath: _index.md
 
 ## Requirements
 
+<<<<<<< HEAD
 ### Resource listing
+=======
+### Listing resources
+>>>>>>> Initial feature commit
 - As a user I want to have an overview of my resources with the most important information at a glance
 - As a user I always want to know the path of the resource I'm currently working in
 - As a user I want to be able to navigate to all parents of the resource I'm currently working in with a single click
