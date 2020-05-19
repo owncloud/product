@@ -58,7 +58,7 @@ def website(ctx):
     'steps': [
         {
         'name': 'build',
-        'image': 'owncloudci/hugo:0.69.2',
+        'image': 'owncloudci/hugo:0.71.0',
         'pull': 'always',
         'commands': [
           'hugo',
