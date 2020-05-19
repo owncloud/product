@@ -403,47 +403,47 @@
 </span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Feature: Accessing a resource via a link
-
-Scenario: Accessing a resource via a link with the &#39;Viewer&#39; role
-  GIVEN I&#39;m anyone with a link to a resource with the &#39;Viewer&#39; role
-   WHEN accessing this resource
-   THEN I see an explanatory note &#34;You can view and download contents.&#34;
-    AND I can list the resource and its contents
-    AND I can download the resource and its contents
-    AND I can view the resource and its contents as in &#39;Feature: Accessing a resource&#39;
-
-Scenario: Accessing a resource via a link with the &#39;Contributor&#39; role
-  GIVEN I&#39;m anyone with a link to a resource with the &#39;Contributor&#39; role
-   WHEN accessing this resource
-   THEN I see an explanatory note &#34;You can view, download and upload contents.&#34;
-    AND I can list the resource and its contents
-    AND I can download the resource and its contents
-    AND I can view the resource and its contents as in &#39;Feature: Accessing a resource&#39;
-    AND I can upload resources into the resource as in &#39;Feature: Uploading a resource&#39;
-
-Scenario: Accessing a resource via a link with the &#39;Editor&#39; role
-  GIVEN I&#39;m anyone with a link to a resource with the &#39;Editor&#39; role
-   WHEN accessing this resource
-   THEN I see an explanatory note &#34;You can view, download, edit, delete and upload contents.&#34;
-    AND I can list the resource and its contents
-    AND I can download the resource and its contents
-    AND I can view the resource and its contents as in &#39;Feature: Accessing a resource&#39;
-    AND I can upload resources into the resource as in &#39;Feature: Uploading a resource&#39;
-    AND I can rename the contents of the resource as in &#39;Feature: Renaming a resource&#39;
-    AND I can delete the contents of the resource as in &#39;Feature: Deleting a resource&#39;
-    AND I can move the contents of the resource as in &#39;Feature: Moving a resource&#39;
-    AND I can create resources within the resource as in &#39;Feature: Creating a resource&#39;
-    AND I can edit/change/update the resource and its contents
-
-Scenario: Accessing a resource via a link with the &#39;Uploader&#39; role
-  GIVEN I&#39;m anyone with a link to a resource with the &#39;Uploader&#39; role
-   WHEN accessing this resource
-   THEN I see an explanatory note &#34;You can drop files here for &lt;link creator display name/user name&gt;.&#34;
-    AND I see a drop zone to add resources via drag &amp; drop or to choose a resource to be added
-    AND I can upload resources into the resource as in &#39;Feature: Uploading a resource&#39;
-    AND I see a list of resources that I uploaded
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-gherkin" data-lang="gherkin"><span class="k">Feature:</span><span class="nf"> Accessing a resource via a link
+</span><span class="nf">
+</span><span class="nf"></span><span class="k">Scenario:</span><span class="nf"> Accessing a resource via a link with the &#39;Viewer&#39; role
+</span><span class="nf">  GIVEN I&#39;m anyone with a link to a resource with the &#39;Viewer&#39; role
+</span><span class="nf">   WHEN accessing this resource
+</span><span class="nf">   THEN I see an explanatory note &#34;You can view and download contents.&#34;
+</span><span class="nf">    AND I can list the resource and its contents
+</span><span class="nf">    AND I can download the resource and its contents
+</span><span class="nf">    AND I can view the resource and its contents as in &#39;Feature: Accessing a resource&#39;
+</span><span class="nf">
+</span><span class="nf">Scenario: Accessing a resource via a link with the &#39;Contributor&#39; role
+</span><span class="nf">  GIVEN I&#39;m anyone with a link to a resource with the &#39;Contributor&#39; role
+</span><span class="nf">   WHEN accessing this resource
+</span><span class="nf">   THEN I see an explanatory note &#34;You can view, download and upload contents.&#34;
+</span><span class="nf">    AND I can list the resource and its contents
+</span><span class="nf">    AND I can download the resource and its contents
+</span><span class="nf">    AND I can view the resource and its contents as in &#39;Feature: Accessing a resource&#39;
+</span><span class="nf">    AND I can upload resources into the resource as in &#39;Feature: Uploading a resource&#39;
+</span><span class="nf">
+</span><span class="nf">Scenario: Accessing a resource via a link with the &#39;Editor&#39; role
+</span><span class="nf">  GIVEN I&#39;m anyone with a link to a resource with the &#39;Editor&#39; role
+</span><span class="nf">   WHEN accessing this resource
+</span><span class="nf">   THEN I see an explanatory note &#34;You can view, download, edit, delete and upload contents.&#34;
+</span><span class="nf">    AND I can list the resource and its contents
+</span><span class="nf">    AND I can download the resource and its contents
+</span><span class="nf">    AND I can view the resource and its contents as in &#39;Feature: Accessing a resource&#39;
+</span><span class="nf">    AND I can upload resources into the resource as in &#39;Feature: Uploading a resource&#39;
+</span><span class="nf">    AND I can rename the contents of the resource as in &#39;Feature: Renaming a resource&#39;
+</span><span class="nf">    AND I can delete the contents of the resource as in &#39;Feature: Deleting a resource&#39;
+</span><span class="nf">    AND I can move the contents of the resource as in &#39;Feature: Moving a resource&#39;
+</span><span class="nf">    AND I can create resources within the resource as in &#39;Feature: Creating a resource&#39;
+</span><span class="nf">    AND I can edit/change/update the resource and its contents
+</span><span class="nf">
+</span><span class="nf">Scenario: Accessing a resource via a link with the &#39;Uploader&#39; role
+</span><span class="nf">  GIVEN I&#39;m anyone with a link to a resource with the &#39;Uploader&#39; role
+</span><span class="nf">   WHEN accessing this resource
+</span><span class="nf">   THEN I see an explanatory note &#34;You can drop files here for &lt;link creator display name/user name&gt;.&#34;
+</span><span class="nf">    AND I see a drop zone to add resources via drag &amp; drop or to choose a resource to be added
+</span><span class="nf">    AND I can upload resources into the resource as in &#39;Feature: Uploading a resource&#39;
+</span><span class="nf">    AND I see a list of resources that I uploaded
+</span></code></pre></td></tr></table>
 </div>
 </div>
 

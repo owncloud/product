@@ -404,24 +404,24 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Feature: Adding a link on a resource
-
-Scenario: Setting link properties
-  GIVEN I&#39;m a logged in user located in the links panel of a resource I&#39;m an owner, co-owner or another role with share permission of
-   WHEN adding a link to the resource
-   THEN I can recognize which resource I&#39;m about to create a link to
-    AND I can choose a name for the link. This name allows to add some information to the link and is only visible to the owner or co-owners.
-    AND I can choose a role for the recipients as in &#39;Feature: Roles for links&#39;
-    AND I can set an expiration date for the link as in &#39;Feature: Expiration date for links&#39;
-    AND I can set a password for the link as in &#39;Feature: Password protection for links&#39;
-    AND I can enter email addresses and a personal note to send the link via mail as in &#39;Feature: Sending links via mail&#39; if the Sharing option &#39;Allow users to send mail notification for shared files&#39; is enabled
-
-Scenario: Confirming link creation
-  GIVEN I have set link properties as in &#39;Scenario: Setting link properties&#39;
-   WHEN I confirm the supplied information
-   THEN the link is added to the resource according to the specified properties
-    AND I get visual feedback to know whether the action was successful or not
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-gherkin" data-lang="gherkin"><span class="k">Feature:</span><span class="nf"> Adding a link on a resource
+</span><span class="nf">
+</span><span class="nf"></span><span class="k">Scenario:</span><span class="nf"> Setting link properties
+</span><span class="nf">  GIVEN I&#39;m a logged in user located in the links panel of a resource I&#39;m an owner, co-owner or another role with share permission of
+</span><span class="nf">   WHEN adding a link to the resource
+</span><span class="nf">   THEN I can recognize which resource I&#39;m about to create a link to
+</span><span class="nf">    AND I can choose a name for the link. This name allows to add some information to the link and is only visible to the owner or co-owners.
+</span><span class="nf">    AND I can choose a role for the recipients as in &#39;Feature: Roles for links&#39;
+</span><span class="nf">    AND I can set an expiration date for the link as in &#39;Feature: Expiration date for links&#39;
+</span><span class="nf">    AND I can set a password for the link as in &#39;Feature: Password protection for links&#39;
+</span><span class="nf">    AND I can enter email addresses and a personal note to send the link via mail as in &#39;Feature: Sending links via mail&#39; if the Sharing option &#39;Allow users to send mail notification for shared files&#39; is enabled
+</span><span class="nf">
+</span><span class="nf">Scenario: Confirming link creation
+</span><span class="nf">  GIVEN I have set link properties as in &#39;Scenario: Setting link properties&#39;
+</span><span class="nf">   WHEN I confirm the supplied information
+</span><span class="nf">   THEN the link is added to the resource according to the specified properties
+</span><span class="nf">    AND I get visual feedback to know whether the action was successful or not
+</span></code></pre></td></tr></table>
 </div>
 </div>
 <div class="gdoc-page__anchorwrap"><h3 id="managing-links-on-a-resource"><a data-clipboard-text="https://owncloud.github.io/product/sharing/links/#managing-links-on-a-resource" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#managing-links-on-a-resource"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Managing links on a resource</h3></div>
@@ -495,73 +495,73 @@ Scenario: Confirming link creation
 </span><span class="lnt">66
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Feature: Managing links on a resource
-
-Scenario: Viewing links on a resource with the role &#39;Owner&#39; or &#39;Co-Owner&#39;
-  GIVEN I&#39;m a collaborator of a specific resource
-    AND I have the role &#39;Owner&#39;
-     OR I have the role &#39;Co-Owner&#39;
-   WHEN looking at the resource in detail
-   THEN I see the base link / collaborator link
-    AND I see an explanatory note &#34;Only invited collaborators can use this link.&#34;
-   THEN I get a list of all links with access roles on the resource whereby each entry contains the following information
-    - Link name
-    - Link role
-    - Indicator for password protection
-    - Expiration date
-    - Initiator of a reshare (if applicable)
-    AND I see an explanatory note &#34;Anyone with the link can access this resource. No sign-in required.&#34;
-    AND I can recognize each links&#39; URL
-    AND I can copy each links&#39; URL as in &#39;Scenario: Copying a private link&#39;
-    AND I can remove a link as in &#39;Scenario: Removing a link on a resource&#39;
-    AND I can modify a link as in &#39;Scenario: Modifying a link on a resource&#39;
-
-Scenario: Viewing links on a resource as a collaborator **with** &#39;Share&#39; permission
-  GIVEN I&#39;m a collaborator of a specific resource
-    AND I have a role with &#39;Share&#39; permission
-   WHEN looking at the resource in detail
-   THEN I see the base link / collaborator link
-    AND I see an explanatory note &#34;Only invited collaborators can use this link.&#34;
-   THEN I get a list of all links with access roles on the resource **which I created** whereby each entry contains the following information
-    - Link name
-    - Link role
-    - Indicator for password protection
-    - Expiration date
-    - Initiator of a reshare (if applicable)
-    AND I see an explanatory note &#34;Anyone with the link can access this resource. No sign-in required.&#34;
-    AND I can recognize each links&#39; URL
-    AND I can copy each links&#39; URL as in &#39;Scenario: Copying a private link&#39;
-    AND I can remove a link **I created** as in &#39;Scenario: Removing a link on a resource&#39;
-    AND I can modify a link **I created** as in &#39;Scenario: Modifying a link on a resource&#39;
-
-Scenario: Viewing links on a resource as a collaborator **without** &#39;Share&#39; permission
-  GIVEN I&#39;m a collaborator of a specific resource
-    AND I have a role without &#39;Share&#39; permission
-   WHEN looking at the resource in detail
-   THEN I see the base link / collaborator link
-    AND I see an explanatory note &#34;Only invited collaborators can use this link.&#34;
-    AND I can recognize each links&#39; URL
-    AND I can copy each links&#39; URL as in &#39;Scenario: Copying a private link&#39;
-
-Scenario: Removing a link on a resource
-  GIVEN I&#39;m a collaborator of a specific resource
-   WHEN viewing links on a resource as in &#39;Scenario: Viewing links on a resource [*]&#39;
-   THEN I can remove each link on the resource which I can list
-    AND I have to confirm the removal
-    AND a removed link disappears from the list
-    AND a removed link is invalidated
-
-Scenario: Modifying a link on a resource
-  GIVEN I&#39;m a collaborator of a specific resource
-   WHEN viewing links on a resource as in &#39;Scenario: Viewing links on a resource [*]&#39;
-   THEN I can change the name of each link which I can list
-    AND I can change the role of each link which I can list as in &#39;Feature: Roles for links&#39;
-    AND I can change the expiration date of each link which I can list as in &#39;Feature: Expiration date for links&#39;
-    AND I can change the password of each link which I can list as in &#39;Feature: Password protection for links&#39;
-    AND I can send the link via mail as in &#39;Feature: Sending links via mail&#39;
-    AND I have to confirm the modifications
-    AND the modifications take effect
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-gherkin" data-lang="gherkin"><span class="k">Feature:</span><span class="nf"> Managing links on a resource
+</span><span class="nf">
+</span><span class="nf"></span><span class="k">Scenario:</span><span class="nf"> Viewing links on a resource with the role &#39;Owner&#39; or &#39;Co-Owner&#39;
+</span><span class="nf">  GIVEN I&#39;m a collaborator of a specific resource
+</span><span class="nf">    AND I have the role &#39;Owner&#39;
+</span><span class="nf">     OR I have the role &#39;Co-Owner&#39;
+</span><span class="nf">   WHEN looking at the resource in detail
+</span><span class="nf">   THEN I see the base link / collaborator link
+</span><span class="nf">    AND I see an explanatory note &#34;Only invited collaborators can use this link.&#34;
+</span><span class="nf">   THEN I get a list of all links with access roles on the resource whereby each entry contains the following information
+</span><span class="nf">    - Link name
+</span><span class="nf">    - Link role
+</span><span class="nf">    - Indicator for password protection
+</span><span class="nf">    - Expiration date
+</span><span class="nf">    - Initiator of a reshare (if applicable)
+</span><span class="nf">    AND I see an explanatory note &#34;Anyone with the link can access this resource. No sign-in required.&#34;
+</span><span class="nf">    AND I can recognize each links&#39; URL
+</span><span class="nf">    AND I can copy each links&#39; URL as in &#39;Scenario: Copying a private link&#39;
+</span><span class="nf">    AND I can remove a link as in &#39;Scenario: Removing a link on a resource&#39;
+</span><span class="nf">    AND I can modify a link as in &#39;Scenario: Modifying a link on a resource&#39;
+</span><span class="nf">
+</span><span class="nf">Scenario: Viewing links on a resource as a collaborator **with** &#39;Share&#39; permission
+</span><span class="nf">  GIVEN I&#39;m a collaborator of a specific resource
+</span><span class="nf">    AND I have a role with &#39;Share&#39; permission
+</span><span class="nf">   WHEN looking at the resource in detail
+</span><span class="nf">   THEN I see the base link / collaborator link
+</span><span class="nf">    AND I see an explanatory note &#34;Only invited collaborators can use this link.&#34;
+</span><span class="nf">   THEN I get a list of all links with access roles on the resource **which I created** whereby each entry contains the following information
+</span><span class="nf">    - Link name
+</span><span class="nf">    - Link role
+</span><span class="nf">    - Indicator for password protection
+</span><span class="nf">    - Expiration date
+</span><span class="nf">    - Initiator of a reshare (if applicable)
+</span><span class="nf">    AND I see an explanatory note &#34;Anyone with the link can access this resource. No sign-in required.&#34;
+</span><span class="nf">    AND I can recognize each links&#39; URL
+</span><span class="nf">    AND I can copy each links&#39; URL as in &#39;Scenario: Copying a private link&#39;
+</span><span class="nf">    AND I can remove a link **I created** as in &#39;Scenario: Removing a link on a resource&#39;
+</span><span class="nf">    AND I can modify a link **I created** as in &#39;Scenario: Modifying a link on a resource&#39;
+</span><span class="nf">
+</span><span class="nf">Scenario: Viewing links on a resource as a collaborator **without** &#39;Share&#39; permission
+</span><span class="nf">  GIVEN I&#39;m a collaborator of a specific resource
+</span><span class="nf">    AND I have a role without &#39;Share&#39; permission
+</span><span class="nf">   WHEN looking at the resource in detail
+</span><span class="nf">   THEN I see the base link / collaborator link
+</span><span class="nf">    AND I see an explanatory note &#34;Only invited collaborators can use this link.&#34;
+</span><span class="nf">    AND I can recognize each links&#39; URL
+</span><span class="nf">    AND I can copy each links&#39; URL as in &#39;Scenario: Copying a private link&#39;
+</span><span class="nf">
+</span><span class="nf">Scenario: Removing a link on a resource
+</span><span class="nf">  GIVEN I&#39;m a collaborator of a specific resource
+</span><span class="nf">   WHEN viewing links on a resource as in &#39;Scenario: Viewing links on a resource [*]&#39;
+</span><span class="nf">   THEN I can remove each link on the resource which I can list
+</span><span class="nf">    AND I have to confirm the removal
+</span><span class="nf">    AND a removed link disappears from the list
+</span><span class="nf">    AND a removed link is invalidated
+</span><span class="nf">
+</span><span class="nf">Scenario: Modifying a link on a resource
+</span><span class="nf">  GIVEN I&#39;m a collaborator of a specific resource
+</span><span class="nf">   WHEN viewing links on a resource as in &#39;Scenario: Viewing links on a resource [*]&#39;
+</span><span class="nf">   THEN I can change the name of each link which I can list
+</span><span class="nf">    AND I can change the role of each link which I can list as in &#39;Feature: Roles for links&#39;
+</span><span class="nf">    AND I can change the expiration date of each link which I can list as in &#39;Feature: Expiration date for links&#39;
+</span><span class="nf">    AND I can change the password of each link which I can list as in &#39;Feature: Password protection for links&#39;
+</span><span class="nf">    AND I can send the link via mail as in &#39;Feature: Sending links via mail&#39;
+</span><span class="nf">    AND I have to confirm the modifications
+</span><span class="nf">    AND the modifications take effect
+</span></code></pre></td></tr></table>
 </div>
 </div>
 <div class="gdoc-page__anchorwrap"><h3 id="roles-for-links"><a data-clipboard-text="https://owncloud.github.io/product/sharing/links/#roles-for-links" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#roles-for-links"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Roles for links</h3></div>
@@ -588,26 +588,26 @@ Scenario: Modifying a link on a resource
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Feature: Roles for links
-
-Scenario: Setting roles for links on a single file
-  GIVEN I&#39;m an owner or co-owner of a specific resource
-   WHEN located in &#39;Scenario: Setting link properties&#39;
-   THEN the role &#39;Viewer&#39; is chosen
-    AND I see an explanatory note &#34;Recipients can view and download contents.&#34;
-
-Scenario: Setting roles for links on a folder
-  GIVEN I&#39;m an owner or co-owner of a specific resource
-   WHEN located in &#39;Scenario: Setting link properties&#39;
-   THEN the role &#39;Viewer&#39; is chosen unless a different role has been chosen before
-    AND I see an explanatory note &#34;Recipients can view and download contents.&#34;
-   THEN I can choose the role &#39;Contributor&#39;
-    AND I see an explanatory note &#34;Recipients can view, download and upload contents.&#34;
-   THEN I can choose the role &#39;Editor&#39;
-    AND I see an explanatory note &#34;Recipients can view, download, edit, delete and upload contents.&#34;
-   THEN I can choose the role &#39;Uploader&#39;
-    AND I see an explanatory note &#34;Recipients can upload but existing contents are not revealed.&#34;
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-gherkin" data-lang="gherkin"><span class="k">Feature:</span><span class="nf"> Roles for links
+</span><span class="nf">
+</span><span class="nf"></span><span class="k">Scenario:</span><span class="nf"> Setting roles for links on a single file
+</span><span class="nf">  GIVEN I&#39;m an owner or co-owner of a specific resource
+</span><span class="nf">   WHEN located in &#39;Scenario: Setting link properties&#39;
+</span><span class="nf">   THEN the role &#39;Viewer&#39; is chosen
+</span><span class="nf">    AND I see an explanatory note &#34;Recipients can view and download contents.&#34;
+</span><span class="nf">
+</span><span class="nf">Scenario: Setting roles for links on a folder
+</span><span class="nf">  GIVEN I&#39;m an owner or co-owner of a specific resource
+</span><span class="nf">   WHEN located in &#39;Scenario: Setting link properties&#39;
+</span><span class="nf">   THEN the role &#39;Viewer&#39; is chosen unless a different role has been chosen before
+</span><span class="nf">    AND I see an explanatory note &#34;Recipients can view and download contents.&#34;
+</span><span class="nf">   THEN I can choose the role &#39;Contributor&#39;
+</span><span class="nf">    AND I see an explanatory note &#34;Recipients can view, download and upload contents.&#34;
+</span><span class="nf">   THEN I can choose the role &#39;Editor&#39;
+</span><span class="nf">    AND I see an explanatory note &#34;Recipients can view, download, edit, delete and upload contents.&#34;
+</span><span class="nf">   THEN I can choose the role &#39;Uploader&#39;
+</span><span class="nf">    AND I see an explanatory note &#34;Recipients can upload but existing contents are not revealed.&#34;
+</span></code></pre></td></tr></table>
 </div>
 </div>
 <div class="gdoc-page__anchorwrap"><h3 id="expiration-date-for-links"><a data-clipboard-text="https://owncloud.github.io/product/sharing/links/#expiration-date-for-links" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#expiration-date-for-links"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Expiration date for links</h3></div>
@@ -657,49 +657,49 @@ Scenario: Setting roles for links on a folder
 </span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">Feature: Expiration date for links
-
-- As a user I want to set an expiration date for links in order to stay in control of access permissions by giving time-based access instead of granting access forever or until I manually remove the link.
-- As an admin I want to set a default expiration date without enforcement to give a recommendation to users and help them maintain control over their resources. Still I don&#39;t want to force or annoy users as some may have reasons to collaborate on resources for a longer amount of time, e.g., in projects.
-- As an admin I have to follow corporate policies which dictate that data exchange with externals may only take place for a certain maximum amount of time to prevent data leaks by human mistake or negligence.
-
-Scenario: Setting an expiration date for links (no default expiration date set)
-  GIVEN I&#39;m an owner or co-owner of a specific resource
-  AND the instance has no default expiration date set for links
-  WHEN located in &#39;Scenario: Setting link properties&#39; or &#39;Scenario: Modifying a link on a resource&#39;
-  THEN the expiration date is not set unless it was set before
-  THEN I can set an expiration date by manually entering it or by using a date picker
-  AND I&#39;m not limited in any way concerning the date except that it must be in the future
-
-Scenario: Setting an expiration date for links (default expiration date set without enforcement)
-  GIVEN I&#39;m an owner or co-owner of a specific resource
-  AND the instance has a default expiration date without enforcement set for collaborators
-  WHEN located in &#39;Scenario: Setting link properties&#39; or &#39;Scenario: Modifying a link on a resource&#39;
-  THEN the expiration date is set to the default value unless it was set to a different value before
-  THEN I can change the expiration date by manually entering it or by using a date picker
-  AND I&#39;m not limited in any way concerning the date except that it must be in the future
-
-Scenario: Setting an expiration date for links (default expiration date set with enforcement)
-  GIVEN I&#39;m an owner or co-owner of a specific resource
-  AND the instance has a default expiration date with enforcement set for collaborators
-  WHEN located in &#39;Scenario: Setting link properties&#39; or &#39;Scenario: Modifying a link on a resource&#39;
-  THEN the expiration date is set to the default value unless it was set to a different value before
-  THEN I can change the expiration date by manually entering it or by using a date picker
-  AND I&#39;m limited concerning the date in a way that it must be at least the default value or earlier
-
-Scenario: Setting an expiration date for links (Password Policy option &#39;X days until link expires if password is set&#39; set)
-  TODO:
-
-Scenario: Setting an expiration date for links (Password Policy option &#39;X days until link expires if password is NOT set&#39; set)
-  TODO:
-
-Scenario: Expiring a link
-  GIVEN an expiration date has been set for a collaborator on a certain resource
-  WHEN the specified day has just ended
-  THEN the collaborator is automatically removed from the resource according to &#39;Scenario: Removing a collaborator from a resource&#39;
-
-
-</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-gherkin" data-lang="gherkin"><span class="k">Feature:</span><span class="nf"> Expiration date for links
+</span><span class="nf">
+</span><span class="nf">- As a user I want to set an expiration date for links in order to stay in control of access permissions by giving time-based access instead of granting access forever or until I manually remove the link.
+</span><span class="nf">- As an admin I want to set a default expiration date without enforcement to give a recommendation to users and help them maintain control over their resources. Still I don&#39;t want to force or annoy users as some may have reasons to collaborate on resources for a longer amount of time, e.g., in projects.
+</span><span class="nf">- As an admin I have to follow corporate policies which dictate that data exchange with externals may only take place for a certain maximum amount of time to prevent data leaks by human mistake or negligence.
+</span><span class="nf">
+</span><span class="nf"></span><span class="k">Scenario:</span><span class="nf"> Setting an expiration date for links (no default expiration date set)
+</span><span class="nf">  GIVEN I&#39;m an owner or co-owner of a specific resource
+</span><span class="nf">  AND the instance has no default expiration date set for links
+</span><span class="nf">  WHEN located in &#39;Scenario: Setting link properties&#39; or &#39;Scenario: Modifying a link on a resource&#39;
+</span><span class="nf">  THEN the expiration date is not set unless it was set before
+</span><span class="nf">  THEN I can set an expiration date by manually entering it or by using a date picker
+</span><span class="nf">  AND I&#39;m not limited in any way concerning the date except that it must be in the future
+</span><span class="nf">
+</span><span class="nf">Scenario: Setting an expiration date for links (default expiration date set without enforcement)
+</span><span class="nf">  GIVEN I&#39;m an owner or co-owner of a specific resource
+</span><span class="nf">  AND the instance has a default expiration date without enforcement set for collaborators
+</span><span class="nf">  WHEN located in &#39;Scenario: Setting link properties&#39; or &#39;Scenario: Modifying a link on a resource&#39;
+</span><span class="nf">  THEN the expiration date is set to the default value unless it was set to a different value before
+</span><span class="nf">  THEN I can change the expiration date by manually entering it or by using a date picker
+</span><span class="nf">  AND I&#39;m not limited in any way concerning the date except that it must be in the future
+</span><span class="nf">
+</span><span class="nf">Scenario: Setting an expiration date for links (default expiration date set with enforcement)
+</span><span class="nf">  GIVEN I&#39;m an owner or co-owner of a specific resource
+</span><span class="nf">  AND the instance has a default expiration date with enforcement set for collaborators
+</span><span class="nf">  WHEN located in &#39;Scenario: Setting link properties&#39; or &#39;Scenario: Modifying a link on a resource&#39;
+</span><span class="nf">  THEN the expiration date is set to the default value unless it was set to a different value before
+</span><span class="nf">  THEN I can change the expiration date by manually entering it or by using a date picker
+</span><span class="nf">  AND I&#39;m limited concerning the date in a way that it must be at least the default value or earlier
+</span><span class="nf">
+</span><span class="nf">Scenario: Setting an expiration date for links (Password Policy option &#39;X days until link expires if password is set&#39; set)
+</span><span class="nf">  TODO:
+</span><span class="nf">
+</span><span class="nf">Scenario: Setting an expiration date for links (Password Policy option &#39;X days until link expires if password is NOT set&#39; set)
+</span><span class="nf">  TODO:
+</span><span class="nf">
+</span><span class="nf">Scenario: Expiring a link
+</span><span class="nf">  GIVEN an expiration date has been set for a collaborator on a certain resource
+</span><span class="nf">  WHEN the specified day has just ended
+</span><span class="nf">  THEN the collaborator is automatically removed from the resource according to &#39;Scenario: Removing a collaborator from a resource&#39;
+</span><span class="nf">
+</span><span class="nf">
+</span></code></pre></td></tr></table>
 </div>
 </div>
 
