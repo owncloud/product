@@ -9,10 +9,9 @@ Feature: Roles for collaborators
   - Cover legacy permission combinations
   - Offer granular permission sets
 
-Scenario: Setting roles for collaborators on a single file
+Scenario: Setting roles for collaborators on a single file as an Owner
   Given I'm a collaborator of a specific file
     And I have the role 'Owner'
-#     Or I have the role 'Co-Owner'
    When located in 'Scenario: Setting collaborator properties'
 #   Then I can choose the role 'Co-Owner'
 #    And I see an explanatory note "Manage collaborators, view, download and edit"
@@ -29,10 +28,9 @@ Scenario: Setting roles for collaborators on a single file
    When choosing the role 'Advanced permissions'
    Then I can set single permissions "Manage" and "Edit"
 
-Scenario: Setting roles for collaborators on a folder
+Scenario: Setting roles for collaborators on a folder as an Owner
   Given I'm a collaborator of a specific folder
     And I have the role 'Owner'
-#     Or I have the role 'Co-Owner'
    When located in 'Scenario: Setting collaborator properties'
 #   Then I can choose the role 'Co-Owner'
 #    And I see an explanatory note "Manage collaborators, view, download, edit and delete"

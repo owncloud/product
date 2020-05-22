@@ -2,9 +2,7 @@ Feature: Overview of received shared resources
 
 Scenario: Listing received shared resources
   Given I'm logged in as a user
-   When I have accepted collaborator invites
-     Or I have pending collaborator invites as in 'Scenario: Being added as a collaborator to a resource (Pending Shares enabled)'
-     Or I have shared resources that I removed from my personal space previously as in 'Feature: Removing a shared resource from a user's personal space'
+   When I have collaborator invites (accepted/pending/declined)
    Then I can list these resources
     And I see the name of the resources
     And I see file type icons or thumbnails
@@ -17,8 +15,7 @@ Scenario: Listing received shared resources
 
 Scenario: Adding a shared resource to a user's personal space
   Given I'm a logged in user
-   When I have pending collaborator invites as in 'Scenario: Being added as a collaborator to a resource (Pending Shares enabled)'
-     Or I have declined collaborator invites
+   When I have pending/declined collaborator invites
    Then I can add such a resource to my personal space
     And the state of the invite changes to 'accepted'
     And the resource is located in the folder configured via the 'share_folder' option

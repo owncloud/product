@@ -7,8 +7,7 @@ Scenario: Being added as a regular single user
 
 Scenario: Being removed as a collaborator from a resource
   Given I'm a collaborator of a certain resource
-   When an Owner removes me from the resource as in 'Scenario: Removing a collaborator from a resource'
-     Or a Co-Owner removes me from the resource as in 'Scenario: Removing a collaborator from a resource'
+   When I'm removed from the resource as in 'Scenario: Removing a collaborator from a resource'
    Then I do not have access to the resource anymore
     And the resource disappears from my resource list
-    And I don't have a way to get back access except asking an Owner/Co-Owner to add me again
+    And I don't have a way to get back access except asking a collaborator to add me again
