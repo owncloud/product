@@ -9,7 +9,7 @@ Scenario: Finding collaborators
         - Type (User/Group/Guest/Federated)
     And the suggestions for guests or federated users only appear once I enter a compliant identifier (e.g., "name@sub.domain.tld")
    Then I choose a collaborator
-    And the chosen collaborator's becomes fixed but can easily be removed again
+    And the chosen collaborator becomes fixed but can easily be removed again
     And I can start typing again to add additional collaborators
 
 Scenario: Setting collaborator properties
