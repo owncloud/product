@@ -18,5 +18,6 @@ geekdocFilePath: oc_in_other_products.md
 - As a user of a third party product I want to choose a file from ownCloud for that I can further work with it
 - As a user of a third party product I want to choose a file from ownCloud and get a public link back for that I can further work with that
 - As a user of a third party product I want to choose a local file, store it in ownCloud and get a public link back for that I can further work with it
+- As a user of a third party product who wants to choose a location/file I want to know during the process which resources are shared in order to not accidentally share resources or work with other user's resources
 
 {{< include file="features/integration/picker.feature" language="gherkin" >}}
