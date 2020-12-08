@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integration on ownCloud Product</title>
+    <link>https://owncloud.github.io/product/integration/</link>
+    <description>Recent content in Integration on ownCloud Product</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://owncloud.github.io/product/integration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://owncloud.github.io/product/integration/oc_in_other_products/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://owncloud.github.io/product/integration/oc_in_other_products/</guid>
+      <description>title: Integrating oC in other products weight: 1 geekdocRepo: https://github.com/owncloud/product geekdocEditPath: edit/master/docs geekdocFilePath: oc_in_other_products.md General  For frontend integration oC provides components as JS libraries to be used by other products The components should comply with oC branding Backend functionality is provided via API calls, authenticated via OIDC  Requirements Location/resource picker  As a user of a third party product I want to store files in ownCloud for that I can further work with them As a user of a third party product I want to choose a file from ownCloud for that I can further work with it As a user of a third party product I want to choose a file from ownCloud and get a public link back for that I can further work with that As a user of a third party product I want to choose a local file, store it in ownCloud and get a public link back for that I can further work with it As a user of a third party product who wants to choose a location/file I want to know during the process which resources are shared in order to not accidentally share resources or work with other user&amp;rsquo;s resources  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  Feature:Location/resource picker Scenario:Choosing a location in ownCloud Given I&amp;#39;m a logged in user (SSO) And I&amp;#39;m using another product When I want to store a resource in ownCloud Then I see a resource listing of the root folder of my personal space # And the visible elements comply with the respective oC brandingAnd I can see the current path (breadcrumb) # And I can see which elements are shared (sharing indicators)And I can navigate down the hierarchy And I can jump up the hierarchy by each level And I can cancel the process And I can confirm the currently chosen location Scenario:Choosing a resource from ownCloud Given I&amp;#39;m a logged in user (SSO) And I&amp;#39;m using another product When I want to select a resource in ownCloud Then I see a resource listing of the root folder of my personal space # And the visible elements comply with the respective oC brandingAnd I can see the current path (breadcrumb) # And I can see which elements are shared (sharing indicators)And I can navigate down the hierarchy And I can jump up the hierarchy by each level And I can select a single resource And I can cancel the process And I can confirm the currently chosen resource # TODO: Scenario when confirming a selection (which data do I get back?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://owncloud.github.io/product/integration/other_products_in_oc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://owncloud.github.io/product/integration/other_products_in_oc/</guid>
+      <description>title: Integrating other products in oC weight: 1 geekdocRepo: https://github.com/owncloud/product geekdocEditPath: edit/master/docs geekdocFilePath: other_products_in_oc.md </description>
+    </item>
+    
+  </channel>
+</rss>

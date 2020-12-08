@@ -42,11 +42,23 @@
   </url>
   
   <url>
+    <loc>https://owncloud.github.io/product/integration/oc_in_other_products/</loc>
+  </url>
+  
+  <url>
+    <loc>https://owncloud.github.io/product/integration/other_products_in_oc/</loc>
+  </url>
+  
+  <url>
     <loc>https://owncloud.github.io/product/categories/</loc>
   </url>
   
   <url>
     <loc>https://owncloud.github.io/product/deployment/</loc>
+  </url>
+  
+  <url>
+    <loc>https://owncloud.github.io/product/integration/</loc>
   </url>
   
   <url>

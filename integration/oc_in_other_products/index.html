@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Deployment">
+<meta name="description" content="Oc in Other Products">
 
-<title>Deployment | ownCloud Product</title>
+<title>Oc in Other Products | ownCloud Product</title>
 <link rel="icon" href="/product/favicon/favicon-32x32.png" type="image/x-icon">
 
 <link rel="stylesheet" href="/product/main.min.css">
@@ -14,7 +14,6 @@
 <link rel="stylesheet" href="/product/custom.css">
 
 
-<link rel="alternate" type="application/rss+xml" href="https://owncloud.github.io/product/deployment/index.xml" title="ownCloud Product" />
 <!--
     Made with Geekdoc theme
     https://github.com/xoxys/hugo-geekdoc
@@ -248,7 +247,7 @@
             <li>
             
                 <span class="flex">
-                    <a href="/product/integration/oc_in_other_products/" class="gdoc-nav__entry ">
+                    <a href="/product/integration/oc_in_other_products/" class="gdoc-nav__entry is-active">
                         Oc in Other Products
                     </a>
                 </span>
@@ -365,7 +364,7 @@
 
 
 
-<div class="gdoc-page__header flex flex-wrap justify-between" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<div class="gdoc-page__header flex flex-wrap justify-between hidden-mobile" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
     <span>
         
             <span class="breadcrumb">
@@ -379,7 +378,14 @@
         
     
     
-        <a href='/product/'>ownCloud Product Documentation</a> / Deployment
+        
+        
+        
+    
+    
+        <a href='/product/'>ownCloud Product Documentation</a> / <a href='/product/integration/'>Integration</a> / Oc in Other Products
+    
+
     
 
     
@@ -389,16 +395,12 @@
     </span>
     <span>
         
-            <svg class="icon code"><use xlink:href="#code"></use></svg>
-            <a href="https://github.com/owncloud/product/edit/master/docs/deployment.md">
-                Edit this page
-            </a>
-        
     </span>
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Deployment</h1>
+        <h1>Oc in Other Products</h1>
         
 
 
@@ -407,6 +409,93 @@
     
 
 
+<h2 id="geekdocfilepath-oc_in_other_productsmd">title: Integrating oC in other products
+weight: 1
+geekdocRepo: <a href="https://github.com/owncloud/product">https://github.com/owncloud/product</a>
+geekdocEditPath: edit/master/docs
+geekdocFilePath: oc_in_other_products.md</h2>
+<h1 id="general">General</h1>
+<ul>
+<li>For frontend integration oC provides components as JS libraries to be used by other products</li>
+<li>The components should comply with oC branding</li>
+<li>Backend functionality is provided via API calls, authenticated via OIDC</li>
+</ul>
+<div class="gdoc-page__anchorwrap"><h2 id="requirements"><a data-clipboard-text="https://owncloud.github.io/product/integration/oc_in_other_products/#requirements" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#requirements"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Requirements</h2></div>
+<div class="gdoc-page__anchorwrap"><h3 id="locationresource-picker"><a data-clipboard-text="https://owncloud.github.io/product/integration/oc_in_other_products/#locationresource-picker" class="gdoc-page__anchor gdoc-page__anchor--left clip" href="#locationresource-picker"><svg class="icon link"><use xlink:href="#link"></use></svg></a>Location/resource picker</h3></div>
+<ul>
+<li>As a user of a third party product I want to store files in ownCloud for that I can further work with them</li>
+<li>As a user of a third party product I want to choose a file from ownCloud for that I can further work with it</li>
+<li>As a user of a third party product I want to choose a file from ownCloud and get a public link back for that I can further work with that</li>
+<li>As a user of a third party product I want to choose a local file, store it in ownCloud and get a public link back for that I can further work with it</li>
+<li>As a user of a third party product who wants to choose a location/file I want to know during the process which resources are shared in order to not accidentally share resources or work with other user&rsquo;s resources</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-gherkin" data-lang="gherkin"><span class="k">Feature:</span><span class="nf"> Location/resource picker
+</span><span class="nf">
+</span><span class="nf"></span><span class="k">Scenario:</span><span class="nf"> Choosing a location in ownCloud
+</span><span class="nf"></span><span class="k">  Given </span><span class="nf">I&#39;m a logged in user (SSO)
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I&#39;m using another product
+</span><span class="nf">   </span><span class="k">When </span><span class="nf">I want to store a resource in ownCloud
+</span><span class="nf">   </span><span class="k">Then </span><span class="nf">I see a resource listing of the root folder of my personal space
+</span><span class="nf"></span><span class="c">#    And the visible elements comply with the respective oC branding</span><span class="nf">
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can see the current path (breadcrumb)
+</span><span class="nf"></span><span class="c">#    And I can see which elements are shared (sharing indicators)</span><span class="nf">
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can navigate down the hierarchy
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can jump up the hierarchy by each level
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can cancel the process
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can confirm the currently chosen location
+</span><span class="nf">
+</span><span class="nf"></span><span class="k">Scenario:</span><span class="nf"> Choosing a resource from ownCloud
+</span><span class="nf"></span><span class="k">  Given </span><span class="nf">I&#39;m a logged in user (SSO)
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I&#39;m using another product
+</span><span class="nf">   </span><span class="k">When </span><span class="nf">I want to select a resource in ownCloud
+</span><span class="nf">   </span><span class="k">Then </span><span class="nf">I see a resource listing of the root folder of my personal space
+</span><span class="nf"></span><span class="c">#    And the visible elements comply with the respective oC branding</span><span class="nf">
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can see the current path (breadcrumb)
+</span><span class="nf"></span><span class="c">#    And I can see which elements are shared (sharing indicators)</span><span class="nf">
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can navigate down the hierarchy
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can jump up the hierarchy by each level
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can select a single resource
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can cancel the process
+</span><span class="nf">    </span><span class="k">And </span><span class="nf">I can confirm the currently chosen resource
+</span><span class="nf">
+</span><span class="nf"></span><span class="c"># TODO: Scenario when confirming a selection (which data do I get back?)</span><span class="nf">
+</span></code></pre></td></tr></table>
+</div>
+</div>
 
 
     </article>
